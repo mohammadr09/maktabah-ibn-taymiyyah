@@ -97,5 +97,9 @@ a:hover {
 
 .font-english-serif {
   font-family: var(--font-english-serif);
-  font-size: 20px;
+  /* font-size: 20px; */
+}
+
+.color-primary {
+  color: var(--color-primary);
 }
