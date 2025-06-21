@@ -103,3 +103,10 @@ a:hover {
 .color-primary {
   color: var(--color-primary);
 }
+
+/* For search bar */
+.input-primary-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 1.25px var(--color-primary);
+  border-color: var(--color-primary);
+}
