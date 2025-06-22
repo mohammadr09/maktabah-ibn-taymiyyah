@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { products } from "../data/test/data";
+// import { products } from "../data/test/data";
 
 export default function ProductSearch() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // const filteredProducts = products.filter((product) =>
+  //   product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
 
-  const maxSuggestions = 5;
+  // const maxSuggestions = 5;
   // const suggestions = filteredProducts.slice(0, maxSuggestions);
 
   return (
