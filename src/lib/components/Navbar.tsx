@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className="flex flex-wrap justify-center gap-3 pt-1 pb-4 sm:pb-6">
                 <Link href="/pages/catalog/sciences/aqeedah" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Aqeedah</Link>
                 <Link href="/pages/catalog/sciences/fiqh" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Fiqh</Link>
-                <Link href="/pages/catalog/sciences/quran" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Qur'an</Link>
+                <Link href="/pages/catalog/sciences/quran" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Qur&apos;an</Link>
                 <Link href="/pages/catalog/sciences/hadeeth" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Hadeeth</Link>
                 <Link href="/pages/catalog/sciences/seerah" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Seerah</Link>
                 <Link href="/pages/catalog/sciences/arabic-lang" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Arabic</Link>

@@ -6,12 +6,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [theme, setTheme] = useState("default");
+  // const [theme, setTheme] = useState("default");
 
-  const themeSelection = ["default", "theme-ottoman", "theme-andalusian", "theme-desert"]
+  // const themeSelection = ["default", "theme-ottoman", "theme-andalusian", "theme-desert"];
 
   return (
-    <div className={theme}>
+    <div className="default">
       <main className="text-center pt-28 px-4 max-w-xl mx-auto">
         <div className="mb-6">
           <h2 className="text-xl sm:text-2xl arabic-text">بسم الله الرحمن الرحيم</h2>
