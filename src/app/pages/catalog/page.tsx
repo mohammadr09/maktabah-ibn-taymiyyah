@@ -1,5 +1,3 @@
-// catalog/page.tsx
-
 import { products } from "@/lib/data/test/data";
 import { Product } from "@/lib/types/product";
 
@@ -54,19 +52,21 @@ export default function Catalog() {
                             <div className="overflow-x-auto">
                                 <div className="flex gap-4">
                                     {books.map((book) => (
-                                        <div key={book.id} className="group w-[160px] flex-shrink-0 border rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                                            <img src={book.image} alt={book.name} className="w-full h-48 object-cover" />
-                                            <div className="p-3 text-center text-sm">
-                                                <h3 className="font-medium">{book.name}</h3>
-                                                <p className="text-gray-600 text-xs mt-1">{book.author}</p>
-                                                <div className="mt-2 relative text-sm font-medium text-gray-700">
-                                                    <span className="group-hover:opacity-0 transition duration-200">${(book.price / 100).toFixed(2)}</span>
-                                                    <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer">
-                                                        Add to Cart
-                                                    </button>
+                                        <Link key={book.id} href={`/pages/catalog/${book.id}`}>
+                                            <div className="group w-[160px] flex-shrink-0 border rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200 cursor-pointer">
+                                                <img src={book.image} alt={book.name} className="w-full h-48 object-cover" />
+                                                <div className="p-3 text-center text-sm">
+                                                    <h3 className="font-medium">{book.name}</h3>
+                                                    <p className="text-gray-600 text-xs mt-1">{book.author}</p>
+                                                    <div className="mt-2 relative text-sm font-medium text-gray-700">
+                                                        <span className="group-hover:opacity-0 transition duration-200">${(book.price / 100).toFixed(2)}</span>
+                                                        <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer">
+                                                            Add to Cart
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
@@ -80,7 +80,6 @@ export default function Catalog() {
                     );
                 })}
             </div>
-
         </div>
     );
 }
