@@ -1,6 +1,7 @@
+// app/page.tsx
+
 "use client";
 
-import ProductSearch from "@/lib/components/Search";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,8 +19,6 @@ export default function Home() {
             Welcome to Maktabah Ibn Taymiyyah
           </h1>
         </div>
-
-        <ProductSearch />
       </main>
 
     </div>

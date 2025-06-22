@@ -104,6 +104,10 @@ a:hover {
   color: var(--color-primary);
 }
 
+.icon-accent-hover:hover {
+  color: var(--color-accent);
+}
+
 /* For search bar */
 .input-primary-focus:focus {
   outline: none;
