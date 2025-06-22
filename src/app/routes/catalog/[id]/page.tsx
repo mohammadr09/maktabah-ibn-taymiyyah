@@ -2,16 +2,9 @@
 
 import { products } from "@/lib/data/test/data";
 import { notFound } from "next/navigation";
-
 import Image from "next/image";
 
-interface BookPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default async function BookPage({ params }: BookPageProps) {
+export default async function BookPage({ params }: { params: { id: string } }) {
   const book = products.find(p => p.id === params.id);
 
   if (!book) return notFound();
