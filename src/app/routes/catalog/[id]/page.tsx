@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 
 export default async function BookPage({ params }: { params: { id: string } }) {
-  const book = products.find(p => p.id === params.id);
+  const book = products.find((p) => p.id === params.id);
 
   if (!book) return notFound();
 
