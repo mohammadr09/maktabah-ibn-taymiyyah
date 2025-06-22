@@ -55,7 +55,7 @@ export default function Catalog() {
                             <div className="overflow-x-auto">
                                 <div className="flex gap-4">
                                     {books.map((book) => (
-                                        <Link key={book.id} href={`/pages/catalog/${book.id}`}>
+                                        <Link key={book.id} href={`/routes/catalog/${book.id}`}>
                                             <div className="group w-[160px] flex-shrink-0 border rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200 cursor-pointer">
                                                 <Image
                                                     src={book.image}
