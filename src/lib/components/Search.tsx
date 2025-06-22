@@ -9,7 +9,7 @@ export default function ProductSearch() {
   );
 
   const maxSuggestions = 5;
-  const suggestions = filteredProducts.slice(0, maxSuggestions);
+  // const suggestions = filteredProducts.slice(0, maxSuggestions);
 
   return (
     <div className="w-full max-w-xl px-4 sm:px-0">
