@@ -14,7 +14,7 @@ export default function Navbar() {
                     </h1>
                 </div>
 
-                <div className="w-full flex justify-center sm:flex-grow sm:justify-center">
+                <div className="w-full flex justify-center sm:flex-grow text-center sm:justify-center items-center">
                     <ProductSearch />
                 </div>
 
@@ -57,8 +57,8 @@ export default function Navbar() {
             <div className="flex flex-wrap justify-center gap-3 pt-1 pb-4 sm:pb-6">
                 <Link href="/routes/catalog/sciences/aqeedah" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Aqeedah</Link>
                 <Link href="/routes/catalog/sciences/fiqh" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Fiqh</Link>
-                <Link href="/routes/catalog/sciences/quran" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Qur&apos;an</Link>
-                <Link href="/routes/catalog/sciences/hadeeth" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Hadeeth</Link>
+                <Link href="/routes/catalog/sciences/tafsir" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Tafisr</Link>
+                <Link href="/routes/catalog/sciences/hadith" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Hadith</Link>
                 <Link href="/routes/catalog/sciences/seerah" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Seerah</Link>
                 <Link href="/routes/catalog/sciences/arabic-lang" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Arabic</Link>
                 <Link href="/routes/catalog/sciences/adab" className="btn px-4 py-2 rounded-md border border-gray-300 hover:bg-gray-100 transition font-english-serif">Islamic Etiquette</Link>

@@ -57,14 +57,16 @@ export default function Catalog() {
                                     {books.map((book) => (
                                         <Link key={book.id} href={`/routes/catalog/${book.id}`}>
                                             <div className="group w-[160px] flex-shrink-0 border rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200 cursor-pointer">
-                                                <Image
-                                                    src={book.image}
-                                                    alt={book.name}
-                                                    width={160}
-                                                    height={192} // h-48 = 12rem = 192px
-                                                    className="object-cover"
-                                                    unoptimized={book.image.startsWith("http")} 
-                                                />
+                                                <div className="relative w-full h-48 overflow-hidden">
+                                                    <Image
+                                                        src={book.image}
+                                                        alt={book.name}
+                                                        width={200}
+                                                        height={200}
+                                                        className="object-cover w-full h-full scale-160 group-hover:scale-170 transition-transform duration-200"
+                                                        unoptimized={book.image.startsWith("http")} 
+                                                    />
+                                                </div>
                                                 <div className="p-3 text-center text-sm">
                                                     <h3 className="font-medium">{book.name}</h3>
                                                     <p className="text-gray-600 text-xs mt-1">{book.author}</p>

@@ -18,8 +18,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-left sm:text-center">
                     {/* Quick Links */}
                     <div className="space-y-3">
-                        <h3 className="font-semibold font-english-serif text-lg">Quick Links</h3>
-                        <ul className="text-sm space-y-2">
+                        <h3 className="font-semibold font-english-serif text-lg text-center">Quick Links</h3>
+                        <ul className="text-sm space-y-2 text-center">
                             <li><Link href="/" className="hover:text-[color:var(--color-accent)] transition">Home</Link></li>
                             <li><Link href="/routes/catalog" className="hover:text-[color:var(--color-accent)] transition">Catalog</Link></li>
                             <li><Link href="/routes/account" className="hover:text-[color:var(--color-accent)] transition">Account</Link></li>
@@ -29,17 +29,17 @@ export default function Footer() {
                     </div>
 
                     {/* Contact Info */}
-                    <div className="space-y-3">
+                    <div className="space-y-3 text-center">
                         <h3 className="font-semibold font-english-serif text-lg">Contact</h3>
                         <p className="text-sm text-gray-600">Email: <a href="mailto:support@maktabahibntaymiyyah.com" className="hover:underline">support@maktabahibntaymiyyah.com</a></p>
-                        <p className="text-sm text-gray-600">Phone: +1 (555) 123-4567</p>
+                        <p className="text-sm text-gray-600">Phone: +1 (347) 949-8796</p>
                         <p className="text-sm text-gray-600">Location: New York, USA</p>
                     </div>
 
                     {/* Newsletter or Info */}
                     <div className="space-y-3">
-                        <h3 className="font-semibold font-english-serif text-lg">Stay Connected</h3>
-                        <p className="text-sm text-gray-600">
+                        <h3 className="font-semibold font-english-serif text-lg text-center">Stay Connected</h3>
+                        <p className="text-sm text-gray-600 text-center">
                             Subscribe to receive updates on new arrivals and curated collections.
                         </p>
                         <form className="flex flex-col sm:flex-row items-center gap-2">
@@ -58,7 +58,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-300 pt-6 text-xs text-gray-500">
                     <p>© {new Date().getFullYear()} Maktabah Ibn Taymiyyah. All rights reserved.</p>
-                    <p className="mt-1">Built with sincerity by students of knowledge.</p>
+                    <p className="mt-1">Built by students of knowledge. May Allah grant us Tawfiq.</p>
                 </div>
             </div>
         </footer>
