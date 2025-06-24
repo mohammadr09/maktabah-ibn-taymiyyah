@@ -104,6 +104,14 @@ a:hover {
   color: var(--color-primary);
 }
 
+.bg-color-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-color-primary:hover {
+  background-color: var(--color-accent);
+}
+
 .icon-accent-hover:hover {
   color: var(--color-accent);
 }

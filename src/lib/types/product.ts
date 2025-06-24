@@ -12,7 +12,7 @@ export interface Product {
     language: "English" | "Arabic"
     pageCount: number,
     stockCount: number,
-    harakat: "Majority" | "Partial" | "None",
+    harakat: "Majority" | "Partial" | "Little to None",
     tahqeeq: string, // name of the Muhaqqiq
     printQuality: "Premium +" | "Premium" | "Good" | "Budget",
     cover: "Hard Leather Cover" | "Hard Color Cover" | "Soft Cover"
