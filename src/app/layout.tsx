@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Playfair_Display,
+  Lato,
+  Inter,
+  Amiri,
+  Cairo,
+  Harmattan,
+  Tajawal,
+  Noto_Naskh_Arabic,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/lib/components/Navbar";
 import Footer from "@/lib/components/Footer";
+import ThemeToggle from "@/lib/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +24,54 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-english-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const lato = Lato({
+  variable: "--font-english-sans",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-english-sans-inter",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const amiri = Amiri({
+  variable: "--font-arabic-amiri",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+});
+
+const cairo = Cairo({
+  variable: "--font-arabic-cairo",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+});
+
+const harmattan = Harmattan({
+  variable: "--font-arabic-harmattan",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+});
+
+const tajawal = Tajawal({
+  variable: "--font-arabic-tajawal",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+});
+
+const notoNaskh = Noto_Naskh_Arabic({
+  variable: "--font-arabic-noto",
+  subsets: ["arabic"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,13 +85,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={[
+        geistSans.variable,
+        geistMono.variable,
+        playfair.variable,
+        lato.variable,
+        inter.variable,
+        amiri.variable,
+        cairo.variable,
+        harmattan.variable,
+        tajawal.variable,
+        notoNaskh.variable,
+      ].join(" ")}
+    >
+      <body className="antialiased">
         <Navbar />
         {children}
         <Footer />
+        <div className="fixed bottom-4 left-4 z-50">
+          <ThemeToggle />
+        </div>
       </body>
     </html>
   );

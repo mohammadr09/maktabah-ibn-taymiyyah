@@ -83,6 +83,15 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
             <span className="font-bold font-english-serif">Cover Style: </span>
             {book.cover}
           </p>
+          <br />
+          {
+            book.referenceCode !== null && book.referenceCode != "" ?
+          <p className="text-gray-700 mt-2 text">
+            <span className="font-bold font-english-serif">Reference Code: </span>
+            {book.referenceCode}
+          </p>
+            : null
+          }
         </div>
       </div>
     </div>

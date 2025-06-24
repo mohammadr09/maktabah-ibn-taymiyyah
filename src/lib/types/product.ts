@@ -15,5 +15,6 @@ export interface Product {
     harakat: "Majority" | "Partial" | "Little to None",
     tahqeeq: string, // name of the Muhaqqiq
     printQuality: "Premium +" | "Premium" | "Good" | "Budget",
-    cover: "Hard Leather Cover" | "Hard Color Cover" | "Soft Cover"
+    cover: "Hard Leather Cover" | "Hard Color Cover" | "Soft Cover",
+    referenceCode?: string,
 }
