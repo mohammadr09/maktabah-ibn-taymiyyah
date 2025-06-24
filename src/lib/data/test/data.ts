@@ -41,12 +41,12 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Tafsir As-Sa'di",
-    author: "Abd al-Rahman al-Sa'di",
+    author: "Sheikh Abd al-Rahman al-Sa'di",
     science: "Tafsir",
     description: `This is the famous Tafseer of Shaykh as-Sa-adi. Shaykh al-Uthaymeen who was his student said: "This is a useful book, easy and trusty. And I recommend its reading." Prefaced by Ibn 'Aqeel wa al-Uthaymin. The Sheikh mentions the best explanation for each verse. This tafsir is a perfect introduction and it is equally suited to beginners and confirmed.`,
     publishingHouse: "Dar Ibn al-Jawzi",
     image: "https://www.sifatusafwa.com/15097-superlarge_default/taysir-al-karim-al-rahman-tafseer-as-sa-di.jpg",
-    price: 30000,
+    price: 4778,
     volumes: 1,
     language: "Arabic",
     pageCount: 950,
@@ -54,7 +54,8 @@ export const products: Product[] = [
     harakat: "Little to None",
     tahqeeq: "",
     printQuality: "Premium +",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    referenceCode: "JWZ-TSADI-001" // subject to change
   },
 
   // Aqeedah

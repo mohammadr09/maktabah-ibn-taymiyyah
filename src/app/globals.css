@@ -12,9 +12,20 @@
   --color-text: #2C2C2C;
 
   /* Fonts */
+  --font-english-serif: var(--font-english-serif), serif;
+  --font-english-sans: var(--font-english-sans), var(--font-english-sans-inter), sans-serif;
+  --font-arabic: var(--font-arabic-cairo), var(--font-arabic-amiri), var(--font-arabic-harmattan), var(--font-arabic-tajawal), var(--font-arabic-noto), sans-serif;
+}
+
+.default {
+  --color-primary: #007F5F;
+  --color-secondary: #F4EBD0;
+  --color-accent: #C49E47;
+  --color-background: #FAF9F6;
+  --color-text: #2C2C2C;
+
   --font-english-serif: 'Playfair Display', serif;
-  --font-english-sans: 'Lato', sans-serif;
-  --font-arabic: 'Cairo', 'Amiri', sans-serif;
+  --font-english-sans: 'Inter', sans-serif;
 }
 
 /* === Theme 2: Andalusian Manuscript === */
@@ -32,11 +43,16 @@
 
 /* === Theme 3: Ottoman Archive === */
 .theme-ottoman {
-  --color-primary: #132743;
-  --color-secondary: #B88A44;
-  --color-accent: #E1EEDD;
-  --color-background: #F9F9F9;
-  --color-text: #444444;
+  --color-primary: #1a3353;
+  /* Slightly deeper blue */
+  --color-secondary: #e2c275;
+  /* Warmer, lighter gold */
+  --color-accent: #b8a14f;
+  /* Stronger gold for accent/hover */
+  --color-background: #f5f7fa;
+  /* Lighter background */
+  --color-text: #23272f;
+  /* Darker text for contrast */
 
   --font-english-serif: 'Crimson Pro', serif;
   --font-english-sans: 'Lato', sans-serif;
@@ -45,11 +61,16 @@
 
 /* === Theme 4: Desert Dunes === */
 .theme-desert {
-  --color-primary: #C2B280;
-  --color-secondary: #556B2F;
-  --color-accent: #FFB400;
-  --color-background: #F5F5F5;
-  --color-text: #3A2E2A;
+  --color-primary: #c2a13a;
+  /* Deeper, more visible gold */
+  --color-secondary: #6b7a3a;
+  /* Stronger olive green */
+  --color-accent: #ff9900;
+  /* Bolder, more saturated accent for hover */
+  --color-background: #f9f6ef;
+  /* Slightly warmer, brighter background */
+  --color-text: #2d221a;
+  /* Darker brown for better contrast */
 
   --font-english-serif: 'Playfair Display', serif;
   --font-english-sans: 'Inter', sans-serif;
@@ -66,7 +87,10 @@ body {
 }
 
 /* Headings use serif */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-english-serif);
 }
 
@@ -76,6 +100,7 @@ a {
   font-weight: 600;
   transition: color 0.3s ease;
 }
+
 a:hover {
   color: var(--color-accent);
 }
