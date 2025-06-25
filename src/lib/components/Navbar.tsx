@@ -15,7 +15,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex-1 flex justify-center items-center">
-                    <div className="w-full max-w-xl">
+                    <div className="max-w-xl w-full">
                         <ProductSearch />
                     </div>
                 </div>
