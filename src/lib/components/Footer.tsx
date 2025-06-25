@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto space-y-10">
                 {/* Logo */}
                 <div>
-                    <h2 className="text-xl sm:text-2xl font-english-serif font-semibold tracking-wide">
+                    <h2 className="text-xl sm:text-2xl arabic-text font-semibold tracking-wide">
                         مكتبة ابن تيمية
                     </h2>
                     <p className="text-sm sm:text-base mt-2 text-gray-600">
