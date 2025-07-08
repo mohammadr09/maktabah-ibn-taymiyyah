@@ -37,7 +37,7 @@ export default function Catalog() {
         "Hanbali Fiqh": "/catalog/sciences/fiqh/hanbali",
     };
 
-    const { cart, addToCart } = useCart();
+    const { addToCart } = useCart();
 
     return (
         <div className="px-4 sm:px-12">
