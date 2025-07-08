@@ -8,8 +8,10 @@ import { loadStripe } from "@stripe/stripe-js";
 
 import Image from "next/image";
 
+import CloseIcon from '@mui/icons-material/Close';
+
 export default function Cart() {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
 
   const cartItems = cart
     .map((item) => {
@@ -35,6 +37,7 @@ export default function Cart() {
         })),
       }),
     });
+  
 
     const data = await res.json();
     if (!data.id) {
@@ -55,27 +58,38 @@ export default function Cart() {
           {cartItems.map((item) => (
             <li key={item.id} className="flex items-center gap-4 border-b pb-4">
               <div className="w-60 h-60 relative flex-shrink-0">
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="object-cover rounded"
-                sizes="240px"
-                priority
-              />
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover rounded"
+                  sizes="240px"
+                  priority
+                />
               </div>
               <div className="flex-1">
-              <Link href={`/routes/catalog/${item.id}`} className="font-semibold hover:underline">{item.name}</Link>
-              <div className="text-xs text-gray-500">{item.author}</div>
-              <div className="text-sm">Quantity: {item.quantity}</div>
+                <Link href={`/routes/catalog/${item.id}`} className="font-semibold hover:underline">{item.name}</Link>
+                <div className="text-xs text-gray-500">{item.author}</div>
+                <div className="text-sm">Quantity: {item.quantity}</div>
               </div>
               <div className="font-bold">${(item.price / 100).toFixed(2)} x {item.quantity}</div>
+              <div className="">
+                <button
+                  className="cursor-pointer text-gray-400 px-4 py-2 rounded transition-colors hover:text-gray-800"
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  <CloseIcon />
+                </button>
+              </div>
             </li>
           ))}
         </ul>
       )}
       {cartItems.length > 0 && (
         <div className="flex flex-col items-end mt-6">
+          <div className="">
+            Total Items: {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+          </div>
           <div className="font-bold text-lg mb-2">
             Subtotal: ${(total / 100).toFixed(2)}
           </div>

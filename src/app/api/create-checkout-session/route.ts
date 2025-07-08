@@ -14,14 +14,14 @@ export async function POST(req: NextRequest) {
     console.log("Stripe items:", items);
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      payment_method_types: ["card", "cashapp"],
       line_items: (items as StripeItem[]).map((item) => ({
         price: item.priceId,
         quantity: item.quantity,
       })),
-      mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cart`,
+      mode: "payment", 
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`, // need to create later
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/routes/cart`,
     });
 
     return NextResponse.json({ id: session.id });

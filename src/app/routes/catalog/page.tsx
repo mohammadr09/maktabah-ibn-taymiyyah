@@ -4,6 +4,7 @@
 
 import { products } from "@/lib/data/test/data";
 import { Product } from "@/lib/types/product";
+import { useCart } from "@/lib/context/CartContext";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -35,6 +36,8 @@ export default function Catalog() {
         "Maliki Fiqh": "/catalog/sciences/fiqh/maliki",
         "Hanbali Fiqh": "/catalog/sciences/fiqh/hanbali",
     };
+
+    const { cart, addToCart } = useCart();
 
     return (
         <div className="px-4 sm:px-12">
@@ -74,7 +77,8 @@ export default function Catalog() {
                                                     <p className="text-gray-600 text-xs mt-1">{book.author}</p>
                                                     <div className="mt-2 relative text-sm font-medium text-gray-700">
                                                         <span className="group-hover:opacity-0 transition duration-200">${(book.price / 100).toFixed(2)}</span>
-                                                        <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer">
+                                                        <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer"
+                                                            onClick={() => addToCart(book.id)}>
                                                             Add to Cart
                                                         </button>
                                                     </div>

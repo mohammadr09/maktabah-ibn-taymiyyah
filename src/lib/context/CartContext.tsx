@@ -9,6 +9,7 @@ type CartItem = {
 type CartContextType = {
   cart: CartItem[];
   addToCart: (id: string) => void;
+  removeFromCart: (id: string) => void;
   getCartCount: () => number;
 };
 
@@ -40,11 +41,26 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
+  const removeFromCart = (id: string) => {
+    setCart((prev) => {
+      const existing = prev.find((item) => item.id === id);
+      if (existing) {
+        if (existing.quantity > 1) {
+          return prev.map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+          );
+        }
+        return prev.filter((item) => item.id !== id);
+      }
+      return prev;
+    });
+  };
+
   const getCartCount = () =>
     cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getCartCount }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, getCartCount }}>
       {children}
     </CartContext.Provider>
   );
@@ -55,4 +71,3 @@ export function useCart() {
   if (!ctx) throw new Error("useCart must be used within CartProvider");
   return ctx;
 }
-
