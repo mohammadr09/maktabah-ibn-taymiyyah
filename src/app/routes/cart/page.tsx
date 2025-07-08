@@ -6,6 +6,8 @@ import Link from "next/link";
 
 import { loadStripe } from "@stripe/stripe-js";
 
+import Image from "next/image";
+
 export default function Cart() {
   const { cart } = useCart();
 
@@ -52,11 +54,20 @@ export default function Cart() {
         <ul className="space-y-2">
           {cartItems.map((item) => (
             <li key={item.id} className="flex items-center gap-4 border-b pb-4">
-              <img src={item.image} alt={item.name} className="w-60 h-60 object-cover rounded" />
+              <div className="w-60 h-60 relative flex-shrink-0">
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover rounded"
+                sizes="240px"
+                priority
+              />
+              </div>
               <div className="flex-1">
-                <Link href={`/routes/catalog/${item.id}`} className="font-semibold hover:underline">{item.name}</Link>
-                <div className="text-xs text-gray-500">{item.author}</div>
-                <div className="text-sm">Quantity: {item.quantity}</div>
+              <Link href={`/routes/catalog/${item.id}`} className="font-semibold hover:underline">{item.name}</Link>
+              <div className="text-xs text-gray-500">{item.author}</div>
+              <div className="text-sm">Quantity: {item.quantity}</div>
               </div>
               <div className="font-bold">${(item.price / 100).toFixed(2)} x {item.quantity}</div>
             </li>
