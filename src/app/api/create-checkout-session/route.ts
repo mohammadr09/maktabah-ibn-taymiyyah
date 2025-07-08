@@ -3,14 +3,19 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: "2025-06-30.basil" });
 
+type StripeItem = {
+  priceId: string;
+  quantity: number;
+};
+
 export async function POST(req: NextRequest) {
   try {
     const { items } = await req.json();
     console.log("Stripe items:", items);
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card", "cashapp"], // Remove "cashapp" if not needed
-      line_items: items.map((item: any) => ({
+      payment_method_types: ["card"],
+      line_items: (items as StripeItem[]).map((item) => ({
         price: item.priceId,
         quantity: item.quantity,
       })),
@@ -20,8 +25,10 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ id: session.id });
-  } catch (err: any) {
-    console.error("Stripe error:", err.message, err);
-    return NextResponse.json({ error: err.message || "Stripe session creation failed" }, { status: 500 });
+  } catch (err) {
+    // Use unknown and check for error shape
+    const error = err as { message?: string };
+    console.error("Stripe error:", error.message, err);
+    return NextResponse.json({ error: error.message || "Stripe session creation failed" }, { status: 500 });
   }
 }
