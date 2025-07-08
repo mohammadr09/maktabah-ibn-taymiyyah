@@ -1,11 +1,19 @@
 // src/app/routes/catalog/[id]/page.tsx
 
+"use client";
+
 import { products } from "@/lib/data/test/data";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 
-export default async function BookPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+import { useCart } from "@/lib/context/CartContext";
+
+import Image from "next/image";
+import React from "react";
+
+export default function BookPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
+
+  const { addToCart } = useCart();
   const book = products.find((p) => p.id === id);
 
   if (!book) return notFound();
@@ -40,7 +48,8 @@ export default async function BookPage({ params }: { params: Promise<{ id: strin
           <p className="mt-4 text-sm text-gray-600">{book.description}</p>
 
           <div className="mt-6">
-            <button className="btn bg-color-primary text-white hover:bg-blue-700 px-4 py-2 rounded">
+            <button className="btn bg-color-primary text-white hover:bg-blue-700 px-4 py-2 rounded"
+              onClick={() => addToCart(book.id)}>
               Add to Cart
             </button>
           </div>

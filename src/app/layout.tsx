@@ -15,6 +15,7 @@ import "./globals.css";
 import Navbar from "@/lib/components/Navbar";
 import Footer from "@/lib/components/Footer";
 import ThemeToggle from "@/lib/components/ThemeToggle";
+import { CartProvider } from "@/lib/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,9 +102,12 @@ export default function RootLayout({
       ].join(" ")}
     >
       <body className="antialiased">
+        <CartProvider>
         <Navbar />
         {children}
         <Footer />
+        </CartProvider>
+        {/* Theme toggle button */}
         <div className="fixed bottom-4 left-4 z-50">
           <ThemeToggle />
         </div>

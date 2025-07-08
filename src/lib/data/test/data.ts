@@ -18,7 +18,8 @@ export const products: Product[] = [
     harakat: "Partial",
     tahqeeq: "Sami Ibn Muhammad Salamah",
     printQuality: "Premium",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: "price_1RicfwPiMpr6kTRn0UqdFqoe" // Stripe price ID
   },
   {
     id: "2",

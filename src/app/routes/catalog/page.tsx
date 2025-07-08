@@ -1,5 +1,7 @@
 // catalog/page.tsx
 
+"use client";
+
 import { products } from "@/lib/data/test/data";
 import { Product } from "@/lib/types/product";
 
