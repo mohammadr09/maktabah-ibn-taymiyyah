@@ -20,10 +20,11 @@ export async function POST(req: NextRequest) {
 
     console.log("Shipment created:", shipment);
     return NextResponse.json(shipment.rates);
-  } catch (error: any) {
-    console.error("Shippo API error:", error);
+  } catch (error) {
+    const err = error as Error;
+    console.error("Shippo API error:", err);
     return NextResponse.json(
-      { error: error.message || "Unknown error", stack: error.stack },
+      { error: err.message || "Unknown error", stack: err.stack },
       { status: 500 }
     );
   }

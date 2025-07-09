@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
+import { ShippingRate } from "../types/shippingRate";
+
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 
@@ -24,19 +26,19 @@ type Parcel = {
   massUnit: string;
 };
 
-type ShippingRate = {
-  object_id: string;
-  amount: string;
-  provider: string;
-  servicelevel: { name: string };
-};
+// type ShippingRate = {
+//   object_id: string;
+//   amount: string;
+//   provider: string;
+//   servicelevel: { name: string };
+// };
 
 export default function ShippingForm({
   cartItems,
   onSelectRate,
 }: {
   cartItems: { priceId: string; quantity: number }[];
-  onSelectRate: React.Dispatch<any>; // or React.Dispatch<React.SetStateAction<any>> 
+  onSelectRate: React.Dispatch<React.SetStateAction<ShippingRate | null>>;
 }) {
   const [address, setAddress] = useState<Address>({
     name: "",
@@ -90,10 +92,9 @@ export default function ShippingForm({
 
       const data = await res.json();
       setRates(data);
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    } catch (err) {
+      const error = err as Error;
+      setError(error.message);
     }
   }
 
@@ -194,10 +195,13 @@ export default function ShippingForm({
             {rates.map((rate, index) => (
               <li key={`${rate.provider}-${index}`}>
                 <button
-                  onClick={() => setSelectedIndex(index)}
+                  onClick={() => {
+                    setSelectedIndex(index);
+                    onSelectRate(rates[index]);
+                  }}
                   className={`w-full text-left p-3 rounded-lg border transition duration-200 ${selectedIndex === index
-                      ? "bg-[var(--color-primary)] text-[var(--color-secondary)] border-[var(--color-primary)] shadow-inner font-semibold"
-                      : "bg-white text-black border-gray-300 hover:bg-[var(--color-secondary)]"
+                    ? "bg-[var(--color-primary)] text-[var(--color-secondary)] border-[var(--color-primary)] shadow-inner font-semibold"
+                    : "bg-white text-black border-gray-300 hover:bg-[var(--color-secondary)]"
                     }`}
                 >
                   <span className="font-medium">{rate.provider}</span> — {rate.servicelevel.name} — $

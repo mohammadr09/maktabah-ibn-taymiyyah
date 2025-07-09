@@ -25,7 +25,7 @@ export default function Cart() {
     (sum, item) => sum + (item.price * item.quantity), 0
   );
 
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+  // const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
   // const handleStripeCheckout = async () => {
   //   const res = await fetch("/api/create-checkout-session", {
