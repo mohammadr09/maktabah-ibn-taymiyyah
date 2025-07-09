@@ -118,7 +118,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Muhammad al-Albani",
     printQuality: "Premium",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: ""
   },
   {
     id: "8",
@@ -136,7 +137,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Dar al-Ta'seel Team",
     printQuality: "Premium +",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: ""
   },
   {
     id: "9",
@@ -154,7 +156,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Dar al-Ta'seel Team",
     printQuality: "Premium +",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: ""
   },
 
   // Fiqh - General
@@ -174,7 +177,8 @@ export const products: Product[] = [
     harakat: "Little to None",
     tahqeeq: "Abdullah al-Turki",
     printQuality: "Premium",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: ""
   },
 
   // Hanafi Fiqh
@@ -194,7 +198,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Jamal al-Hamawi",
     printQuality: "Good",
-    cover: "Soft Cover"
+    cover: "Soft Cover",
+    priceId: ""
   },
 
   // Shafi'i Fiqh
@@ -214,7 +219,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Sayyid Ahmad",
     printQuality: "Premium",
-    cover: "Hard Leather Cover"
+    cover: "Hard Leather Cover",
+    priceId: ""
   },
   {
     id: "18",
@@ -232,7 +238,8 @@ export const products: Product[] = [
     harakat: "Little to None",
     tahqeeq: "Ahmad Shakir",
     printQuality: "Premium",
-    cover: "Hard Color Cover"
+    cover: "Hard Color Cover",
+    priceId: ""
   },
 
   // Adab
@@ -252,6 +259,7 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Muhammad Nasir al-Din al-Albani",
     printQuality: "Good",
-    cover: "Soft Cover"
+    cover: "Soft Cover",
+    priceId: ""
   },
 ];

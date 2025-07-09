@@ -6,7 +6,7 @@ export interface Product {
     description: string,
     publishingHouse: string,
     image: string,
-    priceId?: string, 
+    priceId: string, 
     price: number
     volumes: number
     language: "English" | "Arabic"

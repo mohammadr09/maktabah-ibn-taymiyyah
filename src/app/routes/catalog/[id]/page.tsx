@@ -49,7 +49,7 @@ export default function BookPage({ params }: { params: Promise<{ id: string }> }
 
           <div className="mt-6">
             <button className="btn bg-color-primary text-white hover:bg-blue-700 px-4 py-2 rounded"
-              onClick={() => addToCart(book.id)}>
+              onClick={() => addToCart(book.id, book.priceId)}>
               Add to Cart
             </button>
           </div>
