@@ -78,7 +78,8 @@ export const products: Product[] = [
     harakat: "Partial",
     tahqeeq: "Ali al-Halabi",
     printQuality: "Good",
-    cover: "Hard Color Cover"
+    cover: "Hard Color Cover",
+    priceId: "price_1RimnXPiMpr6kTRn2maT40bk"
   },
   {
     id: "5",
@@ -96,7 +97,8 @@ export const products: Product[] = [
     harakat: "Majority",
     tahqeeq: "Self-published by author",
     printQuality: "Good",
-    cover: "Soft Cover"
+    cover: "Soft Cover",
+    priceId: "price_1Rimp6PiMpr6kTRnES9hCBaw"
   },
 
   // Hadith

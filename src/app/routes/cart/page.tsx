@@ -2,16 +2,17 @@
 
 import { useCart } from "@/lib/context/CartContext";
 import { products } from "@/lib/data/test/data";
-import Link from "next/link";
-
 import { loadStripe } from "@stripe/stripe-js";
 
+import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function Cart() {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, updateCartQuantity } = useCart();
+  const router = useRouter();
 
   const cartItems = cart
     .map((item) => {
@@ -26,26 +27,29 @@ export default function Cart() {
 
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
-  const handleCheckout = async () => {
-    const res = await fetch("/api/create-checkout-session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        items: cartItems.map((item) => ({
-          priceId: item.priceId,
-          quantity: item.quantity,
-        })),
-      }),
-    });
-  
+  // const handleStripeCheckout = async () => {
+  //   const res = await fetch("/api/create-checkout-session", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       items: cartItems.map((item) => ({
+  //         priceId: item.priceId,
+  //         quantity: item.quantity,
+  //       })),
+  //     }),
+  //   });
 
-    const data = await res.json();
-    if (!data.id) {
-      alert("Checkout failed: " + (data.error || "Unknown error"));
-      return;
-    }
-    const stripe = await stripePromise;
-    stripe?.redirectToCheckout({ sessionId: data.id });
+  //   const data = await res.json();
+  //   if (!data.id) {
+  //     alert("Checkout failed: " + (data.error || "Unknown error"));
+  //     return;
+  //   }
+  //   const stripe = await stripePromise;
+  //   stripe?.redirectToCheckout({ sessionId: data.id });
+  // }
+
+  const handleCheckout = () => {
+    router.push("/routes/checkout");
   }
 
   return (
@@ -70,7 +74,17 @@ export default function Cart() {
               <div className="flex-1">
                 <Link href={`/routes/catalog/${item.id}`} className="font-semibold hover:underline">{item.name}</Link>
                 <div className="text-xs text-gray-500">{item.author}</div>
-                <div className="text-sm">Quantity: {item.quantity}</div>
+                <div className="text-sm">Quantity:
+                  <span>
+                    <input
+                      type="number"
+                      className="w-14 px-2 py-1 border rounded"
+                      value={item.quantity}
+                      min={1}
+                      onChange={(e) => updateCartQuantity(item.id, parseInt(e.target.value))}
+                    />
+                  </span>
+                </div>
               </div>
               <div className="font-bold">${(item.price / 100).toFixed(2)} x {item.quantity}</div>
               <div className="">

@@ -58,7 +58,7 @@ export default function Catalog() {
                             <h2 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{science}</h2>
 
                             <div className="overflow-x-auto">
-                                <div className="flex gap-4 justify-center ">
+                                <div className="flex gap-4 sm:justify-center justify-start">
                                     {books.map((book) => (
                                         <Link key={book.id} href={`/routes/catalog/${book.id}`}>
                                             <div className="group w-[160px] flex-shrink-0 border rounded-md overflow-hidden shadow-sm hover:shadow-md transition duration-200 cursor-pointer">
