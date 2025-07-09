@@ -2,7 +2,7 @@
 
 import { useCart } from "@/lib/context/CartContext";
 import { products } from "@/lib/data/test/data";
-import { loadStripe } from "@stripe/stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 
 import Link from "next/link";
 import Image from "next/image";
