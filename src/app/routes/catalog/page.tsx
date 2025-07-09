@@ -78,7 +78,7 @@ export default function Catalog() {
                                                     <div className="mt-2 relative text-sm font-medium text-gray-700">
                                                         <span className="group-hover:opacity-0 transition duration-200">${(book.price / 100).toFixed(2)}</span>
                                                         <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer"
-                                                            onClick={() => addToCart(book.id)}>
+                                                            onClick={() => addToCart(book.id, book.priceId)}>
                                                             Add to Cart
                                                         </button>
                                                     </div>
