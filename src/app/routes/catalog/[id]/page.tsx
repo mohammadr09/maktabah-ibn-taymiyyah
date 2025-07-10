@@ -9,6 +9,7 @@ import { useCart } from "@/lib/context/CartContext";
 
 import Image from "next/image";
 import React from "react";
+import toast from "react-hot-toast";
 
 export default function BookPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = React.use(params);
@@ -49,7 +50,19 @@ export default function BookPage({ params }: { params: Promise<{ id: string }> }
 
           <div className="mt-6">
             <button className="btn bg-color-primary text-white hover:bg-blue-700 px-4 py-2 rounded"
-              onClick={() => addToCart(book.id, book.priceId)}>
+              onClick={(e) => {
+                e.preventDefault(); // important to prevent <Link> navigation
+                addToCart(book.id, book.priceId);
+                toast.success(`${book.name} added to cart`, {
+                  icon: "🛒",
+                  style: {
+                    fontFamily: "var(--font-english-sans)",
+                    background: "var(--color-background)",
+                    border: "1px solid var(--color-primary)",
+                    color: "var(--color-text)",
+                  },
+                });
+              }}>
               Add to Cart
             </button>
           </div>
@@ -95,14 +108,15 @@ export default function BookPage({ params }: { params: Promise<{ id: string }> }
           <br />
           {
             book.referenceCode !== null && book.referenceCode != "" ?
-          <p className="text-gray-700 mt-2 text">
-            <span className="font-bold font-english-serif">Reference Code: </span>
-            {book.referenceCode}
-          </p>
-            : null
+              <p className="text-gray-700 mt-2 text">
+                <span className="font-bold font-english-serif">Reference Code: </span>
+                {book.referenceCode}
+              </p>
+              : null
           }
         </div>
       </div>
     </div>
   );
 }
+

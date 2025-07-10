@@ -5,6 +5,7 @@
 import { products } from "@/lib/data/test/data";
 import { Product } from "@/lib/types/product";
 import { useCart } from "@/lib/context/CartContext";
+import toast from "react-hot-toast";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -69,7 +70,7 @@ export default function Catalog() {
                                                         width={200}
                                                         height={200}
                                                         className="object-cover w-full h-full scale-160 group-hover:scale-170 transition-transform duration-200"
-                                                        unoptimized={book.image.startsWith("http")} 
+                                                        unoptimized={book.image.startsWith("http")}
                                                     />
                                                 </div>
                                                 <div className="p-3 text-center text-sm">
@@ -77,8 +78,22 @@ export default function Catalog() {
                                                     <p className="text-gray-600 text-xs mt-1">{book.author}</p>
                                                     <div className="mt-2 relative text-sm font-medium text-gray-700">
                                                         <span className="group-hover:opacity-0 transition duration-200">${(book.price / 100).toFixed(2)}</span>
-                                                        <button className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer"
-                                                            onClick={() => addToCart(book.id, book.priceId)}>
+                                                        <button
+                                                            className="absolute inset-0 opacity-0 group-hover:opacity-100 text-blue-600 hover:underline transition duration-200 cursor-pointer"
+                                                            onClick={(e) => {
+                                                                e.preventDefault(); // important to prevent <Link> navigation
+                                                                addToCart(book.id, book.priceId);
+                                                                toast.success(`${book.name} added to cart`, {
+                                                                    icon: "🛒",
+                                                                    style: {
+                                                                        fontFamily: "var(--font-english-sans)",
+                                                                        background: "var(--color-background)",
+                                                                        border: "1px solid var(--color-primary)",
+                                                                        color: "var(--color-text)",
+                                                                    },
+                                                                });
+                                                            }}
+                                                        >
                                                             Add to Cart
                                                         </button>
                                                     </div>

@@ -70,7 +70,7 @@ export default function Checkout() {
 
       <ShippingForm cartItems={checkoutItems} onSelectRate={setSelectedRate} />
 
-      {selectedRate && (
+      {/* {selectedRate && (
         <button
           className="mt-6 w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition"
           onClick={async () => {
@@ -100,7 +100,7 @@ export default function Checkout() {
         >
           Proceed to Payment
         </button>
-      )}
+      )} */}
     </main>
   );
 }
