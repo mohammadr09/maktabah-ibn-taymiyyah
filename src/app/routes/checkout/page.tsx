@@ -3,7 +3,7 @@
 import { useCart } from "@/lib/context/CartContext";
 import { products } from "@/lib/data/test/data";
 import ShippingForm from "@/lib/components/ShippingForm";
-import { useState } from "react";
+// import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -27,7 +27,7 @@ export default function Checkout() {
     quantity,
   }));
 
-  const [selectedRate, setSelectedRate] = useState<ShippingRate | null>(null);
+  // const [selectedRate, setSelectedRate] = useState<ShippingRate | null>(null);
 
   return (
     <main className="mx-auto max-w-4xl p-4">
@@ -68,7 +68,7 @@ export default function Checkout() {
         </ul>
       )}
 
-      <ShippingForm cartItems={checkoutItems} onSelectRate={setSelectedRate} />
+      <ShippingForm cartItems={checkoutItems} onSelectRate={() => {}} />
 
       {/* {selectedRate && (
         <button
