@@ -7,7 +7,7 @@ import ShippingForm from "@/lib/components/ShippingForm";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ShippingRate } from "@/lib/types/shippingRate";
+// import { ShippingRate } from "@/lib/types/shippingRate";
 
 export default function Checkout() {
   const { cart } = useCart();
