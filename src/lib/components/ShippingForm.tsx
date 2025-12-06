@@ -52,9 +52,9 @@ export default function ShippingForm({
   const [parcel] = useState<Parcel>({
     length: "10",
     width: "8",
-    height: "4",
+    height: "6",
     distanceUnit: "in",
-    weight: "2",
+    weight: "7",
     massUnit: "lb",
   });
 
