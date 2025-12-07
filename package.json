@@ -14,8 +14,12 @@
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "@stripe/stripe-js": "^7.4.0",
+<<<<<<< HEAD
     "firebase": "^11.10.0",
     "next": "15.3.4",
+=======
+    "next": "15.3.6",
+>>>>>>> 8152ec8 (NextJS Update from 15.3.4 to 15.3.6)
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
