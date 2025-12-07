@@ -1,6 +1,7 @@
 # Maktabah Ibn Taymiyyah
 
-**Created by:** Mohammad Rahman  
+**Created by:** Mohammad Rahman
+**Link:** [maktabahibntaymiyyah.vercel.app](maktabahibntaymiyyah.vercel.app)
 
 A full-featured e-commerce Islamic bookstore built from the ground up using Next.js and Tailwind CSS. The platform includes Firebase Authentication for user management, Stripe for secure payments, and real-time shipping rate calculations powered by Shippo's API.
 
