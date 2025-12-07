@@ -69,7 +69,7 @@ A full-featured e-commerce Islamic bookstore built from the ground up using Next
    ```
 2. Navigate to the project directory:
    ```bash
-   cd bookstore
+   cd maktabah-ibn-taymiyyah
    ```
 3. Install dependencies:
    ```bash
