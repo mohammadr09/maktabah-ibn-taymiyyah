@@ -1,4 +1,4 @@
-# bookstore
+# maktabah-ibn-taymiyyah
 **Created by:** Mohammad Rahman <br/>
 
 A full e-commerce Islamic bookstore built from the ground-up using NextJS and Tailwind CSS-- authenticated using Firebase Auth and provides real-time shipping rates for orders^.
