@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&family=Harmattan:wght@400;700&family=Tajawal:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+@import "tailwindcss";
+
+
+/* === Default Theme: Classic Islamic Elegance === */
+:root {
+  /* Colors */
+  --color-primary: #007F5F;
+  --color-secondary: #F4EBD0;
+  --color-accent: #C49E47;
+  --color-background: #FAF9F6;
+  --color-text: #2C2C2C;
+
+  /* Fonts */
+  --font-english-serif: var(--font-english-serif), serif;
+  --font-english-sans: var(--font-english-sans), var(--font-english-sans-inter), sans-serif;
+  --font-arabic: var(--font-arabic-cairo), var(--font-arabic-amiri), var(--font-arabic-harmattan), var(--font-arabic-tajawal), var(--font-arabic-noto), sans-serif;
+}
+
+.default {
+  --color-primary: #007F5F;
+  --color-secondary: #F4EBD0;
+  --color-accent: #C49E47;
+  --color-background: #FAF9F6;
+  --color-text: #2C2C2C;
+
+  --font-english-serif: 'Playfair Display', serif;
+  --font-english-sans: 'Inter', sans-serif;
+}
+
+/* === Theme 2: Andalusian Manuscript === */
+.theme-andalusian {
+  --color-primary: #005F73;
+  --color-secondary: #F1EDE0;
+  --color-accent: #9E2A2B;
+  --color-background: #FDFDFD;
+  --color-text: #1C1C1C;
+
+  --font-english-serif: 'Playfair Display', serif;
+  --font-english-sans: 'Inter', sans-serif;
+  --font-arabic: 'Tajawal', 'Amiri', sans-serif;
+}
+
+/* === Theme 3: Ottoman Archive === */
+.theme-ottoman {
+  --color-primary: #1a3353;
+  /* Slightly deeper blue */
+  --color-secondary: #e2c275;
+  /* Warmer, lighter gold */
+  --color-accent: #b8a14f;
+  /* Stronger gold for accent/hover */
+  --color-background: #f5f7fa;
+  /* Lighter background */
+  --color-text: #23272f;
+  /* Darker text for contrast */
+
+  --font-english-serif: 'Crimson Pro', serif;
+  --font-english-sans: 'Lato', sans-serif;
+  --font-arabic: 'Noto Naskh Arabic', 'Amiri', sans-serif;
+}
+
+/* === Theme 4: Desert Dunes === */
+.theme-desert {
+  --color-primary: #c2a13a;
+  /* Deeper, more visible gold */
+  --color-secondary: #6b7a3a;
+  /* Stronger olive green */
+  --color-accent: #ff9900;
+  /* Bolder, more saturated accent for hover */
+  --color-background: #f9f6ef;
+  /* Slightly warmer, brighter background */
+  --color-text: #2d221a;
+  /* Darker brown for better contrast */
+
+  --font-english-serif: 'Playfair Display', serif;
+  --font-english-sans: 'Inter', sans-serif;
+  --font-arabic: 'Harmattan', 'Amiri', sans-serif;
+}
+
+/* === Base styles using variables === */
+body {
+  @apply antialiased;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-english-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headings use serif */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-english-serif);
+}
+
+/* Links use primary color */
+a {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Arabic text helper class */
+.arabic-text {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  unicode-bidi: embed;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+/* RTL container helper */
+.rtl {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+.font-english-serif {
+  font-family: var(--font-english-serif);
+  /* font-size: 20px; */
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.bg-color-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-color-primary:hover {
+  background-color: var(--color-accent);
+}
+
+.icon-accent-hover:hover {
+  color: var(--color-accent);
+}
+
+/* For search bar */
+.input-primary-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 1.25px var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.input-style {
+  @apply w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
