@@ -17,8 +17,8 @@ export default function ProductSearch() {
     <div className="relative w-full">
       <input
         type="text"
-        placeholder="Search by Author, Title, Keyword"
-        className="w-full border border-gray-300 rounded-2xl px-4 py-2 text-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200"
+        placeholder="Search by Author, Title, or Keyword"
+        className="w-full border border-amber-600 rounded-[100px] px-4 py-2 text-gray-600 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 font-light"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onFocus={() => setFocused(true)}

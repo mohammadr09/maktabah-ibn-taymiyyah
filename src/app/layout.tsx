@@ -78,7 +78,7 @@ const notoNaskh = Noto_Naskh_Arabic({
 
 export const metadata: Metadata = {
   title: "Maktabah Ibn Taymiyyah",
-  description: "Salafi Islamic Bookstore specializing in literature from the Salaf and contemporary scholars.",
+  description: "A Salafi Islamic Bookstore specializing in literature from the Salaf and contemporary scholars.",
 };
 
 export default function RootLayout({
@@ -104,19 +104,19 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <CartProvider>
-        <Navbar />
-        {children}
-        <Toaster
-          toastOptions={{
-            style: {
-              fontFamily: "var(--font-english-sans)",
-              background: "var(--color-background)",
-              color: "var(--color-text)",
-              border: "1px solid var(--color-primary)",
-            },
-          }}
-        />
-        <Footer />
+          <Navbar />
+          {children}
+          <Toaster
+            toastOptions={{
+              style: {
+                fontFamily: "var(--font-english-sans)",
+                background: "var(--color-background)",
+                color: "var(--color-text)",
+                border: "1px solid var(--color-primary)",
+              },
+            }}
+          />
+          {/* <Footer /> */}
         </CartProvider>
         {/* Theme toggle button */}
         <div className="fixed bottom-4 left-4 z-50">
